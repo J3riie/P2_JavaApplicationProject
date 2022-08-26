@@ -1,5 +1,6 @@
-package com.hemebiotech.analytics.counter;
+package com.hemebiotech.analytics.processor;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -7,11 +8,11 @@ import java.util.Map;
 /**
  * This class parses every @param symptoms of a list and returns the number of times each one occures in a Map
  */
-public class CountSymptomOccurencesFromList {
+public class ProcessSymptomOccurencesFromList {
 
     private final List<String> symptoms;
 
-    public CountSymptomOccurencesFromList(List<String> symptoms) {
+    public ProcessSymptomOccurencesFromList(List<String> symptoms) {
         if (symptoms.isEmpty()) {
             throw new IllegalArgumentException("Le fichier texte donné est vide");
         }
@@ -28,5 +29,9 @@ public class CountSymptomOccurencesFromList {
             }
         }
         return symptomsMap;
+    }
+
+    public void sortSymptoms() {
+        symptoms.sort(Comparator.naturalOrder());
     }
 }
