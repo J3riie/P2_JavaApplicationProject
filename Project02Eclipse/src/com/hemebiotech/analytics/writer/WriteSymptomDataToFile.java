@@ -20,6 +20,9 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
      * @param filepath a full or partial path to a file where to write into, file is created if it doesn't exists
      */
     public WriteSymptomDataToFile(String filepath) {
+        if (filepath.isEmpty() || filepath.isBlank()) {
+            throw new IllegalArgumentException("Le répertoire n'est pas valide");
+        }
         this.filepath = filepath;
     }
 

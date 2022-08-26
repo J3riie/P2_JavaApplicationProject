@@ -3,6 +3,12 @@ package com.hemebiotech.analytics;
 import java.util.List;
 import java.util.Map;
 
+import com.hemebiotech.analytics.counter.CountSymptomOccurencesFromList;
+import com.hemebiotech.analytics.reader.ISymptomReader;
+import com.hemebiotech.analytics.reader.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.writer.ISymptomWriter;
+import com.hemebiotech.analytics.writer.WriteSymptomDataToFile;
+
 public class HemebiotechAnalytics {
 
     public static void main(String[] args) {
