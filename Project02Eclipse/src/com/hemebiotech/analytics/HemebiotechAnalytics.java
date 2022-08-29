@@ -15,7 +15,6 @@ public class HemebiotechAnalytics {
         final ISymptomReader reader = new ReadSymptomDataFromFile("Project02Eclipse\\symptoms.txt");
         final List<String> symptomsList = reader.getSymptoms();
         final ProcessSymptomOccurencesFromList processor = new ProcessSymptomOccurencesFromList(symptomsList);
-        processor.sortSymptoms();
         final Map<String, Integer> symptomsMap = processor.countSymptoms();
         final ISymptomWriter writer = new WriteSymptomDataToFile("Project02Eclipse\\output.out");
         writer.writeSymptoms(symptomsMap);

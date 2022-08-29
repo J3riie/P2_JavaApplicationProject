@@ -1,9 +1,8 @@
 package com.hemebiotech.analytics.processor;
 
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * This class parses every @param symptoms of a list and returns the number of times each one occures in a Map
@@ -20,7 +19,7 @@ public class ProcessSymptomOccurencesFromList {
     }
 
     public Map<String, Integer> countSymptoms() {
-        final Map<String, Integer> symptomsMap = new HashMap<>();
+        final Map<String, Integer> symptomsMap = new TreeMap<>();
         for (final String symptom : symptoms) {
             if (symptomsMap.containsKey(symptom)) {
                 symptomsMap.put(symptom, symptomsMap.get(symptom) + 1);
@@ -29,9 +28,5 @@ public class ProcessSymptomOccurencesFromList {
             }
         }
         return symptomsMap;
-    }
-
-    public void sortSymptoms() {
-        symptoms.sort(Comparator.naturalOrder());
     }
 }
