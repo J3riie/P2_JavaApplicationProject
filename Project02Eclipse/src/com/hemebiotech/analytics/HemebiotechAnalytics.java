@@ -12,6 +12,7 @@ import com.hemebiotech.analytics.writer.WriteSymptomDataToFile;
 public class HemebiotechAnalytics {
 
     public static void main(String[] args) {
+        // main class commentary
         final ISymptomReader reader = new ReadSymptomDataFromFile("Project02Eclipse\\symptoms.txt");
         final List<String> symptomsList = reader.getSymptoms();
         final ProcessSymptomOccurencesFromList processor = new ProcessSymptomOccurencesFromList(symptomsList);
